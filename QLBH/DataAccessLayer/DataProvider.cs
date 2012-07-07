@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Data;
 using System.Data.SqlClient;
-namespace QLBH
+namespace QLBH.DataAccessLayer
 {
     class DataProvider
     {   
@@ -41,12 +41,9 @@ namespace QLBH
             }
             catch (SqlException ex)
             {
-                throw new Exception("Lỗi: Thực hiện câu lệnh");
+                throw new Exception("Lỗi: Thực hiện câu lệnh");                
             }
-            finally
-            {
-                return dt;
-            }
+            return dt;
         }
         /// <summary>
         /// Hàm thực hiện câu lênh SQL {INSERT,UPDATE,DELETE}
@@ -58,7 +55,7 @@ namespace QLBH
                 command = new SqlCommand(sqlString, connection);
                 command.ExecuteNonQuery();
             }
-            catch (SqlException ex) {
+            catch (SqlException) {
                 throw new Exception("Lỗi : Thực hiện câu lệnh");
             }
         }
@@ -73,10 +70,10 @@ namespace QLBH
                 command = new SqlCommand(sqlString, connection);
                 return command.ExecuteScalar();
             }
-            catch (SqlException ex)
+            catch (SqlException)
             {
                 throw new Exception("Lỗi : Thực hiện câu lệnh");
-                return;
+                return null;
             }
         }
 
