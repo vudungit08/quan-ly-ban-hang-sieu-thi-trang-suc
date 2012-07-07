@@ -102,5 +102,17 @@ namespace QLBH.Presentation
                 childForm.Close();
             }
         }
+
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmMain_Shown(object sender, EventArgs e)
+        {
+            Presentation.frmLogin frm = new Presentation.frmLogin();
+            frm.MdiParent = this;
+            frm.Show();
+        }
     }
 }

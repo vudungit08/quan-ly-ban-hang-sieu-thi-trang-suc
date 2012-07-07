@@ -6,3 +6,4 @@ E:\BTTN\QLBH\QLBH\bin\Debug\QLBH.pdb
 E:\BTTN\QLBH\QLBH\obj\Debug\QLBH.exe
 E:\BTTN\QLBH\QLBH\obj\Debug\QLBH.pdb
 E:\BTTN\QLBH\QLBH\obj\Debug\QLBH.Presentation.frmMain.resources
+E:\BTTN\QLBH\QLBH\obj\Debug\QLBH.Presentation.frmLogin.resources

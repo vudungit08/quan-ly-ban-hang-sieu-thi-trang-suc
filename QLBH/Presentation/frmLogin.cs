@@ -15,5 +15,17 @@ namespace QLBH.Presentation
         {
             InitializeComponent();
         }
+
+        private void frmLogin_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Bạn có muốn thoát không?", "Thoát", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes) {
+                frmLogin_FormClosed(null, null);
+            }
+        }
     }
 }
