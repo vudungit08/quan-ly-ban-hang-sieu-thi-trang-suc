@@ -12,10 +12,10 @@ C:\Users\Administrator\Desktop\BTL\QLBH\obj\Debug\QLBH.pdb
 C:\Users\Administrator\Desktop\BTL\QLBH\bin\Debug\QLBH.exe
 C:\Users\Administrator\Desktop\BTL\QLBH\bin\Debug\QLBH.pdb
 C:\Users\Administrator\Desktop\BTL\QLBH\obj\Debug\ResolveAssemblyReference.cache
-C:\Users\Administrator\Desktop\BTL\QLBH\obj\Debug\QLBH.Presentation.frmLogin.resources
-C:\Users\Administrator\Desktop\BTL\QLBH\obj\Debug\QLBH.Presentation.frmMain.resources
 C:\Users\Administrator\Desktop\BTL\QLBH\obj\Debug\QLBH.Properties.Resources.resources
 C:\Users\Administrator\Desktop\BTL\QLBH\obj\Debug\QLBH.csproj.GenerateResource.Cache
 C:\Users\Administrator\Desktop\BTL\QLBH\bin\Debug\DATA\QLBH_DATA.mdf
 C:\Users\Administrator\Desktop\BTL\QLBH\bin\Debug\DATA\QLBH_DATA_log.ldf
 C:\Users\Administrator\Desktop\BTL\QLBH\bin\Debug\QLBH.exe.config
+C:\Users\Administrator\Desktop\BTL\QLBH\obj\Debug\QLBH.frmMain.resources
+C:\Users\Administrator\Desktop\BTL\QLBH\obj\Debug\QLBH.frmLogin.resources
