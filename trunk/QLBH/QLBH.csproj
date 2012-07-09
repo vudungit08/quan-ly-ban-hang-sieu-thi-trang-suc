@@ -78,6 +78,12 @@
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="HeThong\frmChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HeThong\frmChangePassword.Designer.cs">
+      <DependentUpon>frmChangePassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmLogin.resx">
@@ -88,9 +94,17 @@
       <DependentUpon>frmMain.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="HeThong\frmChangePassword.resx">
+      <DependentUpon>frmChangePassword.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLy\frmQuanlynhanvien.resx">
+      <DependentUpon>frmQuanlynhanvien.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <Compile Include="Properties\Resources.Designer.cs">
@@ -106,6 +120,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="QuanLy\frmQuanlynhanvien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLy\frmQuanlynhanvien.Designer.cs">
+      <DependentUpon>frmQuanlynhanvien.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -160,6 +180,14 @@
       <DependentUpon>QLBH_DATA.mdf</DependentUpon>
     </Content>
     <Content Include="icon.ico" />
+    <None Include="Resources\1341800048_change_password.png" />
+    <None Include="Resources\1341797848_preferences-desktop-theme.png" />
+    <None Include="Resources\1341797801_data_management.png" />
+    <None Include="Resources\1341797753_Binoculars.png" />
+    <None Include="Resources\1341797714_BeOS_person.png" />
+    <None Include="Resources\1341797673_bestseller.png" />
+    <None Include="Resources\1341797626_benchmarking.png" />
+    <None Include="Resources\projection_screen_present.png" />
     <None Include="Resources\1341733316_Stats.png" />
     <None Include="Resources\1341733217_sales-report.png" />
     <None Include="Resources\1341733040_Log Out.png" />
@@ -193,8 +221,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="BaoCao\" />
-    <Folder Include="HeThong\" />
-    <Folder Include="QuanLy\" />
     <Folder Include="ThongKe\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

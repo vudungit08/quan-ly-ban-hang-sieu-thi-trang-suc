@@ -46,11 +46,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.Location = new System.Drawing.Point(-1, 102);
+            this.label1.Location = new System.Drawing.Point(7, 104);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(96, 15);
+            this.label1.Size = new System.Drawing.Size(87, 15);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Tên đăng nhập :";
+            this.label1.Text = "Mã nhân viên :";
             // 
             // label2
             // 

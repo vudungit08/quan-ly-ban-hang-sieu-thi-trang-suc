@@ -35,9 +35,8 @@ namespace QLBH
                 err.SetError(txtMatkhau, "Chưa nhập mật khẩu");
                 return;
             }
-            List<DbParameter> lst = new List<DbParameter>();
-            lst.Add(new DbParameter("MaNV", ParameterDirection.Input, txtTendangnhap.Text));
-            DataTable dt = dp.getAllData("dbo.getNVbyID", lst);
+
+            DataTable dt = dp.getAllData("dbo.getNVbyID", new List<DbParameter>() { new DbParameter("MaNV", txtTendangnhap.Text) });
             if (dt.Rows.Count > 0 && dt.Rows[0]["Matkhau"].Equals(txtMatkhau.Text))
             {
                 getID(txtTendangnhap.Text);
