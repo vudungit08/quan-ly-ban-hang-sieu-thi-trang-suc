@@ -19,3 +19,17 @@ C:\Users\Administrator\Desktop\BTL\QLBH\bin\Debug\DATA\QLBH_DATA_log.ldf
 C:\Users\Administrator\Desktop\BTL\QLBH\bin\Debug\QLBH.exe.config
 C:\Users\Administrator\Desktop\BTL\QLBH\obj\Debug\QLBH.frmMain.resources
 C:\Users\Administrator\Desktop\BTL\QLBH\obj\Debug\QLBH.frmLogin.resources
+C:\Documents and Settings\Easy XP\Desktop\BTL\QLBH\bin\Debug\QLBH.exe.config
+C:\Documents and Settings\Easy XP\Desktop\BTL\QLBH\obj\Debug\QLBH.exe
+C:\Documents and Settings\Easy XP\Desktop\BTL\QLBH\obj\Debug\QLBH.pdb
+C:\Documents and Settings\Easy XP\Desktop\BTL\QLBH\bin\Debug\DATA\QLBH_DATA.mdf
+C:\Documents and Settings\Easy XP\Desktop\BTL\QLBH\bin\Debug\DATA\QLBH_DATA_log.ldf
+C:\Documents and Settings\Easy XP\Desktop\BTL\QLBH\bin\Debug\QLBH.exe
+C:\Documents and Settings\Easy XP\Desktop\BTL\QLBH\bin\Debug\QLBH.pdb
+C:\Documents and Settings\Easy XP\Desktop\BTL\QLBH\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Easy XP\Desktop\BTL\QLBH\obj\Debug\QLBH.frmLogin.resources
+C:\Documents and Settings\Easy XP\Desktop\BTL\QLBH\obj\Debug\QLBH.frmMain.resources
+C:\Documents and Settings\Easy XP\Desktop\BTL\QLBH\obj\Debug\QLBH.Properties.Resources.resources
+C:\Documents and Settings\Easy XP\Desktop\BTL\QLBH\obj\Debug\QLBH.csproj.GenerateResource.Cache
+C:\Documents and Settings\Easy XP\Desktop\BTL\QLBH\obj\Debug\QLBH.HeThong.frmChangePassword.resources
+C:\Documents and Settings\Easy XP\Desktop\BTL\QLBH\obj\Debug\QLBH.QuanLy.frmQuanlynhanvien.resources

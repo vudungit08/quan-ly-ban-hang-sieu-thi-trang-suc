@@ -39,7 +39,7 @@ namespace QLBH
     
     class DataProcess:DataConnection{
         public DataProcess()
-            : base(@"Data Source=SVNTEAM062211\SQLEXPRESS;Initial Catalog=QLBH_DATA;Integrated Security=True")
+            : base(@"Data Source=MRT\VNQTEXPRESS;Initial Catalog=QLBH_DATA;Integrated Security=True")
         { 
         }
         /// <summary>
@@ -80,12 +80,8 @@ namespace QLBH
                     cmd = new SqlCommand(strProc, cnn);
                     cmd.CommandType = CommandType.StoredProcedure;
                     foreach (DbParameter dbParameter in parameters)
-                    {
-                        SqlParameter parameter = new SqlParameter();
-                        parameter.ParameterName = "@" + dbParameter.Name;
-                        parameter.Direction = dbParameter.Direction;
-                        parameter.Value = dbParameter.Value;
-                        cmd.Parameters.Add(parameter);
+                    {                    
+                        cmd.Parameters.AddWithValue(dbParameter.Name,dbParameter.Value);
                     }
                     adap = new SqlDataAdapter(cmd);
                     adap.Fill(dt);
@@ -137,11 +133,7 @@ namespace QLBH
                     cmd.CommandType = CommandType.StoredProcedure;
                     foreach (DbParameter dbParameter in parameters)
                     {
-                        SqlParameter parameter = new SqlParameter();
-                        parameter.ParameterName = "@" + dbParameter.Name;
-                        parameter.Direction = dbParameter.Direction;
-                        parameter.Value = dbParameter.Value;
-                        cmd.Parameters.Add(parameter);
+                        cmd.Parameters.AddWithValue(dbParameter.Name, dbParameter.Value);
                     }
                     result = cmd.ExecuteScalar();
                 }
@@ -185,12 +177,9 @@ namespace QLBH
                     cmd.CommandType = CommandType.StoredProcedure;
                     foreach (DbParameter dbParameter in parameters)
                     {
-                        SqlParameter parameter = new SqlParameter();
-                        parameter.ParameterName = "@" + dbParameter.Name;
-                        parameter.Direction = dbParameter.Direction;
-                        parameter.Value = dbParameter.Value;
-                        cmd.Parameters.Add(parameter);
-                    }
+                        cmd.Parameters.AddWithValue(dbParameter.Name, dbParameter.Value);                        
+                    }                     
+                    
                     result = cmd.ExecuteNonQuery();
                 }
             }
@@ -200,17 +189,15 @@ namespace QLBH
 
         }
         
-    }
+    }    
     public class DbParameter
     {
-        public string Name { get; set; }
-        public ParameterDirection Direction { get; set; }
+        public string Name { get; set; }     
         public object Value { get; set; }
 
-        public DbParameter(string paramName, ParameterDirection paramDirection, object paramValue)
+        public DbParameter(string paramName,object paramValue)
         {
-            Name = paramName;
-            Direction = paramDirection;
+            Name = '@'+paramName;            
             Value = paramValue;
         }
     }
