@@ -107,6 +107,14 @@
       <DependentUpon>frmQuanlynhanvien.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="QuanLy\frmQuanlySanpham.resx">
+      <DependentUpon>frmQuanlySanpham.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLy\frmThemnhomSP.resx">
+      <DependentUpon>frmThemnhomSP.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
@@ -126,6 +134,18 @@
     </Compile>
     <Compile Include="QuanLy\frmQuanlynhanvien.Designer.cs">
       <DependentUpon>frmQuanlynhanvien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLy\frmQuanlySanpham.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLy\frmQuanlySanpham.Designer.cs">
+      <DependentUpon>frmQuanlySanpham.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLy\frmThemnhomSP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLy\frmThemnhomSP.Designer.cs">
+      <DependentUpon>frmThemnhomSP.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

@@ -264,6 +264,7 @@
             this.mnuQuanlysanpham.Name = "mnuQuanlysanpham";
             this.mnuQuanlysanpham.Size = new System.Drawing.Size(282, 22);
             this.mnuQuanlysanpham.Text = "Quản lý sản phẩm";
+            this.mnuQuanlysanpham.Click += new System.EventHandler(this.mnuQuanlysanpham_Click);
             // 
             // toolStripSeparator8
             // 
