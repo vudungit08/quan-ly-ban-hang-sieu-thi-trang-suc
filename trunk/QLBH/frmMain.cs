@@ -65,6 +65,13 @@ namespace QLBH
             frm.Show();
         }
 
+        private void mnuQuanlysanpham_Click(object sender, EventArgs e)
+        {
+            QuanLy.frmQuanlySanpham frm = new QLBH.QuanLy.frmQuanlySanpham();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
      
 
 

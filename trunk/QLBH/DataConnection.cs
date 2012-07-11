@@ -75,17 +75,19 @@ namespace QLBH
             try
             {
                 Open();
-                if (parameters != null)
-                {
+                
                     cmd = new SqlCommand(strProc, cnn);
                     cmd.CommandType = CommandType.StoredProcedure;
-                    foreach (DbParameter dbParameter in parameters)
-                    {                    
-                        cmd.Parameters.AddWithValue(dbParameter.Name,dbParameter.Value);
+                    if (parameters != null)
+                    {
+                        foreach (DbParameter dbParameter in parameters)
+                        {
+                            cmd.Parameters.AddWithValue(dbParameter.Name, dbParameter.Value);
+                        }
                     }
                     adap = new SqlDataAdapter(cmd);
                     adap.Fill(dt);
-                }
+                
             }
             catch (SqlException)
             {
