@@ -50,6 +50,7 @@ namespace QLBH.QuanLy
             if (tvLoaiSP.SelectedNode != null)
             {
                 QuanLy.frmThemnhomSP frm = new frmThemnhomSP(tvLoaiSP.SelectedNode.Tag.ToString());
+                frm.LG = new frmThemnhomSP.LoadGroup(loadGroup);
                 frm.ShowDialog();
             }
         }
@@ -57,7 +58,7 @@ namespace QLBH.QuanLy
         private void btnSuaLoai_Click(object sender, EventArgs e)
         {
 
-            QuanLy.frmThemnhomSP frm = new frmThemnhomSP("Sửa nhóm Sản phẩm.","ádasdas");
+            QuanLy.frmThemnhomSP frm = new frmThemnhomSP(tvLoaiSP.SelectedNode.Tag.ToString(), "sua");
             frm.ShowDialog();
         }
 

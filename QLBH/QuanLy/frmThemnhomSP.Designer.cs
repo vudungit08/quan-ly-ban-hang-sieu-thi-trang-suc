@@ -63,7 +63,7 @@
             this.txtMa.Name = "txtMa";
             this.txtMa.ReadOnly = true;
             this.txtMa.Size = new System.Drawing.Size(54, 21);
-            this.txtMa.TabIndex = 1;
+            this.txtMa.TabIndex = 100;
             // 
             // label2
             // 
@@ -101,7 +101,7 @@
             this.txtMaNhomCha.Name = "txtMaNhomCha";
             this.txtMaNhomCha.ReadOnly = true;
             this.txtMaNhomCha.Size = new System.Drawing.Size(175, 21);
-            this.txtMaNhomCha.TabIndex = 1;
+            this.txtMaNhomCha.TabIndex = 101;
             // 
             // txtNhom
             // 
@@ -109,7 +109,7 @@
             this.txtNhom.Location = new System.Drawing.Point(158, 6);
             this.txtNhom.Name = "txtNhom";
             this.txtNhom.Size = new System.Drawing.Size(99, 21);
-            this.txtNhom.TabIndex = 1;
+            this.txtNhom.TabIndex = 0;
             // 
             // label4
             // 
@@ -138,7 +138,7 @@
             this.txtDiengiai.Multiline = true;
             this.txtDiengiai.Name = "txtDiengiai";
             this.txtDiengiai.Size = new System.Drawing.Size(175, 53);
-            this.txtDiengiai.TabIndex = 1;
+            this.txtDiengiai.TabIndex = 2;
             // 
             // btnCapNhat
             // 
@@ -146,7 +146,7 @@
             this.btnCapNhat.Location = new System.Drawing.Point(101, 144);
             this.btnCapNhat.Name = "btnCapNhat";
             this.btnCapNhat.Size = new System.Drawing.Size(75, 32);
-            this.btnCapNhat.TabIndex = 2;
+            this.btnCapNhat.TabIndex = 3;
             this.btnCapNhat.Text = "&Cập nhật";
             this.btnCapNhat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCapNhat.UseVisualStyleBackColor = true;
@@ -158,7 +158,7 @@
             this.btnHuy.Location = new System.Drawing.Point(182, 144);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(75, 32);
-            this.btnHuy.TabIndex = 2;
+            this.btnHuy.TabIndex = 4;
             this.btnHuy.Text = "&Hủy bỏ";
             this.btnHuy.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnHuy.UseVisualStyleBackColor = true;
