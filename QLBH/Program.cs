@@ -15,7 +15,7 @@ namespace QLBH
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new QuanLy.frmQuanlySanpham());
+            Application.Run(new frmMain());
         }
     }
 }
