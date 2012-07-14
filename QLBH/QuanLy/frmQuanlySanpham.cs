@@ -218,6 +218,29 @@ namespace QLBH.QuanLy
                 anhsp.ImageLocation = fileOpen.FileName;
             }
         }
+        private bool validate_input() {
+            err.Clear();
+            if (txtMaH.Text.Trim().Equals("")) { err.SetError(txtMaH, "Chưa nhập Mã hàng."); return false; }
+            if (txtTenH.Text.Trim().Equals("")) {err.SetError(txtTenH,"Chưa nhập Tên hàng.");return false; }
+            if (txtGianhap.Text.Trim().Equals("")) { err.SetError(txtGianhap, "Chưa nhập giá."); return false; }
+            if (txtTylelai.Text.Trim().Equals("")) { err.SetError(txtTylelai, "Chưa nhập."); return false; }
+            if (txtThoigianbh.Text.Trim().Equals("")) { err.SetError(txtThoigianbh, "Chưa nhập Thời gian BH."); return false; }
+            return true;
+        }
+        private void btnCapnhat_Click(object sender, EventArgs e)
+        {
+            if (!validate_input()) { return; }
+            if (dp.getAllData("getSPbyID", new List<DbParameter> { new DbParameter("MaSP",txtMaH.Text)}).Rows.Count == 0)
+            {
+
+            }
+            else
+            {
+                err.SetError(txtMaH, "Mã SP này đã có.");
+                return;
+            }
+
+        }
 
        
     }
