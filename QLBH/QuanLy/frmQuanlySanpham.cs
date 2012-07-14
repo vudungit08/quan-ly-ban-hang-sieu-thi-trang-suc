@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.IO;
 
 namespace QLBH.QuanLy
 {
@@ -14,6 +15,7 @@ namespace QLBH.QuanLy
         DataProcess dp = new DataProcess();
         DataTable dtCmb = new DataTable();
         DataRow dtCmbR;
+        Boolean chinhsua = false;
         public frmQuanlySanpham()
         {
             InitializeComponent();
@@ -163,16 +165,20 @@ namespace QLBH.QuanLy
 
         private void dtgv_SelectionChanged(object sender, EventArgs e)
         {
-            set_control(false);            
-            change_Status_btn(true, true, false, true, false);
-            txtMaH.Text = dtgv.CurrentRow.Cells[1].Value.ToString();
-            txtTenH.Text = dtgv.CurrentRow.Cells[2].Value.ToString();
-            txtDvt.Text = dtgv.CurrentRow.Cells[4].Value.ToString();
-            txtGianhap.Text = dtgv.CurrentRow.Cells[5].Value.ToString();
-            txtTylelai.Text = dtgv.CurrentRow.Cells[6].Value.ToString();
-            txtThoigianbh.Text = dtgv.CurrentRow.Cells[7].Value.ToString();
-            txtmota.Text = dtgv.CurrentRow.Cells[8].Value.ToString();
-            anhsp.ImageLocation = System.Windows.Forms.Application.StartupPath+"/" + @dtgv.CurrentRow.Cells[9].Value.ToString();
+            try
+            {
+                set_control(false);
+                change_Status_btn(true, true, false, true, false);
+                txtMaH.Text = dtgv.CurrentRow.Cells[1].Value.ToString();
+                txtTenH.Text = dtgv.CurrentRow.Cells[2].Value.ToString();
+                txtDvt.Text = dtgv.CurrentRow.Cells[4].Value.ToString();
+                txtGianhap.Text = dtgv.CurrentRow.Cells[5].Value.ToString();
+                txtTylelai.Text = dtgv.CurrentRow.Cells[6].Value.ToString();
+                txtThoigianbh.Text = dtgv.CurrentRow.Cells[7].Value.ToString();
+                txtmota.Text = dtgv.CurrentRow.Cells[8].Value.ToString();
+                anhsp.ImageLocation = System.Windows.Forms.Application.StartupPath + "/" + @dtgv.CurrentRow.Cells[9].Value.ToString();
+            }
+            catch (Exception) { return; }
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -232,7 +238,27 @@ namespace QLBH.QuanLy
             if (!validate_input()) { return; }
             if (dp.getAllData("getSPbyID", new List<DbParameter> { new DbParameter("MaSP",txtMaH.Text)}).Rows.Count == 0)
             {
-
+                if(File.Exists(anhsp.ImageLocation)){
+                    File.Copy(anhsp.ImageLocation, System.Windows.Forms.Application.StartupPath + @"/Images/" + txtMaH.Text + ".jpg", true);
+                }
+                if (dp.executeSQL("addNewSP", new List<DbParameter> {
+                                new DbParameter("MaSP",txtMaH.Text),
+                                new DbParameter("Maloai",cmbNhomsp.SelectedValue.ToString()),
+                                new DbParameter("TenH",txtTenH.Text),
+                                new DbParameter("DonVT",txtDvt.Text),
+                                new DbParameter("GiaNhap",txtGianhap.Text),
+                                new DbParameter("tylelai",txtTylelai.Text),
+                                new DbParameter("thoigianBH",txtThoigianbh.Text),
+                                new DbParameter("mota",txtmota.Text),
+                                new DbParameter("anh_url","Images/"+txtMaH.Text+".jpg")
+                              }) == 1)
+                {
+                    MessageBox.Show("Thêm thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    loadGrid(tvLoaiSP.SelectedNode.Tag.ToString());
+                    change_Status_btn(true, true, false, true, false);
+                    set_control(false);
+                    dtgv.Enabled = true;
+                }
             }
             else
             {
@@ -240,6 +266,20 @@ namespace QLBH.QuanLy
                 return;
             }
 
+        }
+
+        private void btnHuybo_Click(object sender, EventArgs e)
+        {
+            loadGrid(tvLoaiSP.SelectedNode.Tag.ToString());
+            dtgv.Enabled = true;
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            dtgv.Enabled = false;
+            chinhsua = true;
+            set_control(true);
+            change_Status_btn(false, false, true, false, true);            
         }
 
        
