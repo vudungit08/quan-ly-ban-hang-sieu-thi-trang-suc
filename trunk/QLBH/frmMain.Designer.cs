@@ -276,6 +276,7 @@
             this.mnuQuanglychuongtrinhkhuyenmai.Name = "mnuQuanglychuongtrinhkhuyenmai";
             this.mnuQuanglychuongtrinhkhuyenmai.Size = new System.Drawing.Size(282, 22);
             this.mnuQuanglychuongtrinhkhuyenmai.Text = "Quản lý chương trình khuyến mãi";
+            this.mnuQuanglychuongtrinhkhuyenmai.Click += new System.EventHandler(this.mnuQuanglychuongtrinhkhuyenmai_Click);
             // 
             // toolStripSeparator9
             // 

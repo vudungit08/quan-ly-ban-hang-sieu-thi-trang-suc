@@ -29,7 +29,7 @@ namespace QLBH
             if (dt.Rows.Count == 1) {
                 this.MaNV = MaNV;
                 this.Matkhau = dt.Rows[0]["Matkhau"].ToString();
-                lblnhanvien.Text ="Nhân viên : "+dt.Rows[0]["TenNV"].ToString()+" - Chức vụ :"+dt.Rows[0]["Chucvu"].ToString();
+                lblnhanvien.Text ="Nhân viên : "+dt.Rows[0]["TenNV"].ToString()+" - Chức vụ :"+(dt.Rows[0]["Chucvu"].ToString().ToLower()=="admin"?"Quản lý":"Nhân viên bán hàng");
             }
         }
         private void frmMain_Shown(object sender, EventArgs e)
@@ -68,6 +68,13 @@ namespace QLBH
         private void mnuQuanlysanpham_Click(object sender, EventArgs e)
         {
             QuanLy.frmQuanlySanpham frm = new QLBH.QuanLy.frmQuanlySanpham();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void mnuQuanglychuongtrinhkhuyenmai_Click(object sender, EventArgs e)
+        {
+            QuanLy.frmQuanlykhuyenmai frm = new QLBH.QuanLy.frmQuanlykhuyenmai();
             frm.MdiParent = this;
             frm.Show();
         }

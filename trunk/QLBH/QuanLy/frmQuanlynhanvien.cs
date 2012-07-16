@@ -223,6 +223,8 @@ namespace QLBH.QuanLy
             if (e.KeyCode == Keys.F6) btnXoa_Click(null, null);
             if (e.KeyCode == Keys.Escape) btnThoat_Click(null, null);
         }
+
+
     }
 }
 
