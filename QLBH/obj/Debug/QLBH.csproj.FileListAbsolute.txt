@@ -39,3 +39,4 @@ C:\Users\Administrator\Desktop\BTL\QLBH\obj\Debug\QLBH.HeThong.frmChangePassword
 C:\Users\Administrator\Desktop\BTL\QLBH\obj\Debug\QLBH.QuanLy.frmQuanlynhanvien.resources
 C:\Users\Administrator\Desktop\BTL\QLBH\obj\Debug\QLBH.QuanLy.frmQuanlySanpham.resources
 C:\Users\Administrator\Desktop\BTL\QLBH\obj\Debug\QLBH.QuanLy.frmThemnhomSP.resources
+C:\Documents and Settings\Easy XP\Desktop\BTL\QLBH\obj\Debug\QLBH.QuanLy.frmQuanlykhuyenmai.resources

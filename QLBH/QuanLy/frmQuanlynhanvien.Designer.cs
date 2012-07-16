@@ -31,16 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmQuanlynhanvien));
             this.dtgr = new System.Windows.Forms.DataGridView();
-            this.stt = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Matkhau = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ngaysinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Diachi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Sodienthoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Chucvu = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Tylehh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.txtNgaysinh = new System.Windows.Forms.MaskedTextBox();
@@ -82,6 +72,16 @@
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.btnHuybo = new System.Windows.Forms.ToolStripButton();
             this.err = new System.Windows.Forms.ErrorProvider(this.components);
+            this.stt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Matkhau = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ngaysinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Diachi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sodienthoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Chucvu = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Tylehh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dtgr)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -110,94 +110,15 @@
             this.Chucvu,
             this.Tylehh});
             this.dtgr.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtgr.EnableHeadersVisualStyles = false;
             this.dtgr.Location = new System.Drawing.Point(0, 0);
             this.dtgr.MultiSelect = false;
             this.dtgr.Name = "dtgr";
             this.dtgr.ReadOnly = true;
+            this.dtgr.RowHeadersVisible = false;
             this.dtgr.Size = new System.Drawing.Size(782, 203);
             this.dtgr.TabIndex = 100;
             this.dtgr.SelectionChanged += new System.EventHandler(this.dtgr_SelectionChanged);
-            // 
-            // stt
-            // 
-            this.stt.HeaderText = "STT";
-            this.stt.Name = "stt";
-            this.stt.ReadOnly = true;
-            this.stt.Width = 53;
-            // 
-            // MaNV
-            // 
-            this.MaNV.DataPropertyName = "PK_MaNV";
-            this.MaNV.HeaderText = "Mã NV";
-            this.MaNV.Name = "MaNV";
-            this.MaNV.ReadOnly = true;
-            this.MaNV.Width = 65;
-            // 
-            // TenNV
-            // 
-            this.TenNV.DataPropertyName = "TenNV";
-            this.TenNV.HeaderText = "Tên NV";
-            this.TenNV.Name = "TenNV";
-            this.TenNV.ReadOnly = true;
-            this.TenNV.Width = 69;
-            // 
-            // Matkhau
-            // 
-            this.Matkhau.DataPropertyName = "Matkhau";
-            this.Matkhau.HeaderText = "Mật khẩu";
-            this.Matkhau.Name = "Matkhau";
-            this.Matkhau.ReadOnly = true;
-            this.Matkhau.Width = 77;
-            // 
-            // Ngaysinh
-            // 
-            this.Ngaysinh.DataPropertyName = "NgaySinh";
-            this.Ngaysinh.HeaderText = "Ngày Sinh";
-            this.Ngaysinh.Name = "Ngaysinh";
-            this.Ngaysinh.ReadOnly = true;
-            this.Ngaysinh.Width = 81;
-            // 
-            // Diachi
-            // 
-            this.Diachi.DataPropertyName = "DiaChi";
-            this.Diachi.HeaderText = "Địa chỉ";
-            this.Diachi.Name = "Diachi";
-            this.Diachi.ReadOnly = true;
-            this.Diachi.Width = 65;
-            // 
-            // Sodienthoai
-            // 
-            this.Sodienthoai.DataPropertyName = "DienThoai";
-            this.Sodienthoai.HeaderText = "Số điện thoại";
-            this.Sodienthoai.Name = "Sodienthoai";
-            this.Sodienthoai.ReadOnly = true;
-            this.Sodienthoai.Width = 95;
-            // 
-            // Email
-            // 
-            this.Email.DataPropertyName = "Email";
-            this.Email.HeaderText = "Email";
-            this.Email.Name = "Email";
-            this.Email.ReadOnly = true;
-            this.Email.Width = 57;
-            // 
-            // Chucvu
-            // 
-            this.Chucvu.DataPropertyName = "Chucvu";
-            this.Chucvu.HeaderText = "Chức vụ";
-            this.Chucvu.Name = "Chucvu";
-            this.Chucvu.ReadOnly = true;
-            this.Chucvu.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Chucvu.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Chucvu.Width = 72;
-            // 
-            // Tylehh
-            // 
-            this.Tylehh.DataPropertyName = "TyleHH";
-            this.Tylehh.HeaderText = "% HH";
-            this.Tylehh.Name = "Tylehh";
-            this.Tylehh.ReadOnly = true;
-            this.Tylehh.Width = 59;
             // 
             // panel1
             // 
@@ -604,6 +525,88 @@
             // 
             this.err.ContainerControl = this;
             // 
+            // stt
+            // 
+            this.stt.DataPropertyName = "tt";
+            this.stt.HeaderText = "STT";
+            this.stt.Name = "stt";
+            this.stt.ReadOnly = true;
+            this.stt.Width = 53;
+            // 
+            // MaNV
+            // 
+            this.MaNV.DataPropertyName = "PK_MaNV";
+            this.MaNV.HeaderText = "Mã NV";
+            this.MaNV.Name = "MaNV";
+            this.MaNV.ReadOnly = true;
+            this.MaNV.Width = 65;
+            // 
+            // TenNV
+            // 
+            this.TenNV.DataPropertyName = "TenNV";
+            this.TenNV.HeaderText = "Tên NV";
+            this.TenNV.Name = "TenNV";
+            this.TenNV.ReadOnly = true;
+            this.TenNV.Width = 69;
+            // 
+            // Matkhau
+            // 
+            this.Matkhau.DataPropertyName = "Matkhau";
+            this.Matkhau.HeaderText = "Mật khẩu";
+            this.Matkhau.Name = "Matkhau";
+            this.Matkhau.ReadOnly = true;
+            this.Matkhau.Width = 77;
+            // 
+            // Ngaysinh
+            // 
+            this.Ngaysinh.DataPropertyName = "NgaySinh";
+            this.Ngaysinh.HeaderText = "Ngày Sinh";
+            this.Ngaysinh.Name = "Ngaysinh";
+            this.Ngaysinh.ReadOnly = true;
+            this.Ngaysinh.Width = 81;
+            // 
+            // Diachi
+            // 
+            this.Diachi.DataPropertyName = "DiaChi";
+            this.Diachi.HeaderText = "Địa chỉ";
+            this.Diachi.Name = "Diachi";
+            this.Diachi.ReadOnly = true;
+            this.Diachi.Width = 65;
+            // 
+            // Sodienthoai
+            // 
+            this.Sodienthoai.DataPropertyName = "DienThoai";
+            this.Sodienthoai.HeaderText = "Số điện thoại";
+            this.Sodienthoai.Name = "Sodienthoai";
+            this.Sodienthoai.ReadOnly = true;
+            this.Sodienthoai.Width = 95;
+            // 
+            // Email
+            // 
+            this.Email.DataPropertyName = "Email";
+            this.Email.HeaderText = "Email";
+            this.Email.Name = "Email";
+            this.Email.ReadOnly = true;
+            this.Email.Width = 57;
+            // 
+            // Chucvu
+            // 
+            this.Chucvu.DataPropertyName = "Chucvu";
+            this.Chucvu.HeaderText = "Chức vụ";
+            this.Chucvu.Name = "Chucvu";
+            this.Chucvu.ReadOnly = true;
+            this.Chucvu.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Chucvu.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Chucvu.Width = 72;
+            // 
+            // Tylehh
+            // 
+            this.Tylehh.DataPropertyName = "TyleHH";
+            this.Tylehh.HeaderText = "% HH";
+            this.Tylehh.Name = "Tylehh";
+            this.Tylehh.ReadOnly = true;
+            this.Tylehh.Width = 59;
+            // 
             // frmQuanlynhanvien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -633,16 +636,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dtgr;
-        private System.Windows.Forms.DataGridViewTextBoxColumn stt;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaNV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenNV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Matkhau;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Ngaysinh;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Diachi;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Sodienthoai;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
-        private System.Windows.Forms.DataGridViewComboBoxColumn Chucvu;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Tylehh;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.BindingNavigator Nav;
@@ -684,6 +677,16 @@
         private System.Windows.Forms.ToolStripButton btnCapnhat;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ErrorProvider err;
+        private System.Windows.Forms.DataGridViewTextBoxColumn stt;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaNV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenNV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Matkhau;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Ngaysinh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Diachi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Sodienthoai;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
+        private System.Windows.Forms.DataGridViewComboBoxColumn Chucvu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Tylehh;
 
 
     }

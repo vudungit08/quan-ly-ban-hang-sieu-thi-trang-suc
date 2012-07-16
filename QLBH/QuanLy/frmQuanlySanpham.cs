@@ -13,8 +13,6 @@ namespace QLBH.QuanLy
     public partial class frmQuanlySanpham : Form
     {
         DataProcess dp = new DataProcess();
-        DataTable dtCmb = new DataTable();
-        DataRow dtCmbR;
         Boolean chinhsua = false;
         public frmQuanlySanpham()
         {
@@ -32,6 +30,7 @@ namespace QLBH.QuanLy
                 tvLoaiSP.Nodes.Add(tn);                
                 loadGroupChild(dr["PK_MaLoai"].ToString(), tn);                
             }
+            loadCmb();
         }
         private void loadGroupChild(string IDparent,TreeNode parent) {
             DataTable dt = dp.getAllData("getLoaiSPchild", new List<DbParameter> { new DbParameter("Maloai",IDparent) });
@@ -41,21 +40,15 @@ namespace QLBH.QuanLy
                 tn.Text = dr["TenLoai"].ToString();
                 tn.Tag = dr["PK_MaLoai"].ToString();
                 parent.Nodes.Add(tn);
-                if (dp.getAllData("getLoaiSPchild", new List<DbParameter> { new DbParameter("Maloai", dr["PK_MaLoai"].ToString()) }).Rows.Count == 0) {
-                    //
-                    dtCmbR = dtCmb.NewRow();
-                    dtCmbR["Maloai"] = dr["PK_MaLoai"].ToString();
-                    dtCmbR["Tenloai"] =dr["TenLoai"].ToString();
-                    dtCmb.Rows.Add(dtCmbR);
-                    //
-                }                
+                            
                 loadGroupChild(dr["PK_MaLoai"].ToString(), tn);
             }
         }
         private void loadCmb() {
+            DataTable dtCmb = dp.getAllData("getLoaiSP", null);
             cmbNhomsp.DataSource = dtCmb;
-            cmbNhomsp.ValueMember="Maloai";
-            cmbNhomsp.DisplayMember = "Tenloai";
+            cmbNhomsp.ValueMember = "PK_MaLoai";
+            cmbNhomsp.DisplayMember = "TenLoai";
         }
         private void loadGrid(string Maloai) {
             change_Status_btn(true, true, false, true, false);
@@ -66,7 +59,8 @@ namespace QLBH.QuanLy
             if (dtgv.Rows.Count == 0) {
                 change_Status_btn(true, false, false, false, false);
             }
-            loadCmb();
+            cmbNhomsp.SelectedValue = tvLoaiSP.SelectedNode.Tag;
+
         }
         private void set_control(bool bl) {
             txtMaH.Enabled = bl;
@@ -100,12 +94,7 @@ namespace QLBH.QuanLy
         private void frmQuanlySanpham_Load(object sender, EventArgs e)
         {
             //
-            dtCmb.Columns.Add("MaLoai", typeof(string));
-            dtCmb.Columns.Add("TenLoai", typeof(string));
-            dtCmbR = dtCmb.NewRow();
-            dtCmbR["MaLoai"] = "-1";
-            dtCmbR["TenLoai"] = "-- Nhóm đang được chọn --";
-            dtCmb.Rows.Add(dtCmbR);
+            
             //
             loadGroup();
             this.dtgv.AutoGenerateColumns = false;
@@ -168,15 +157,15 @@ namespace QLBH.QuanLy
             try
             {
                 set_control(false);
-                change_Status_btn(true, true, false, true, false);
-                txtMaH.Text = dtgv.CurrentRow.Cells[1].Value.ToString();
-                txtTenH.Text = dtgv.CurrentRow.Cells[2].Value.ToString();
-                txtDvt.Text = dtgv.CurrentRow.Cells[4].Value.ToString();
-                txtGianhap.Text = dtgv.CurrentRow.Cells[5].Value.ToString();
-                txtTylelai.Text = dtgv.CurrentRow.Cells[6].Value.ToString();
-                txtThoigianbh.Text = dtgv.CurrentRow.Cells[7].Value.ToString();
-                txtmota.Text = dtgv.CurrentRow.Cells[8].Value.ToString();
-                anhsp.ImageLocation = System.Windows.Forms.Application.StartupPath + "/" + @dtgv.CurrentRow.Cells[9].Value.ToString();
+                change_Status_btn(true, true, false, true, false);                
+                txtMaH.Text = dtgv.CurrentRow.Cells[MaH.Name].Value.ToString();
+                txtTenH.Text = dtgv.CurrentRow.Cells[TenH.Name].Value.ToString();
+                txtDvt.Text = dtgv.CurrentRow.Cells[dvt.Name].Value.ToString();
+                txtGianhap.Text = dtgv.CurrentRow.Cells[gianhap.Name].Value.ToString();
+                txtTylelai.Text = dtgv.CurrentRow.Cells[tylelai.Name].Value.ToString();
+                txtThoigianbh.Text = dtgv.CurrentRow.Cells[thoigianbh.Name].Value.ToString();
+                txtmota.Text = dtgv.CurrentRow.Cells[Mota.Name].Value.ToString();
+                anhsp.ImageLocation = System.Windows.Forms.Application.StartupPath + "/" + @dtgv.CurrentRow.Cells[anh_url.Name].Value.ToString();
             }
             catch (Exception) { return; }
         }
@@ -235,36 +224,65 @@ namespace QLBH.QuanLy
         }
         private void btnCapnhat_Click(object sender, EventArgs e)
         {
-            if (!validate_input()) { return; }
-            if (dp.getAllData("getSPbyID", new List<DbParameter> { new DbParameter("MaSP",txtMaH.Text)}).Rows.Count == 0)
-            {
-                if(File.Exists(anhsp.ImageLocation)){
-                    File.Copy(anhsp.ImageLocation, System.Windows.Forms.Application.StartupPath + @"/Images/" + txtMaH.Text + ".jpg", true);
-                }
-                if (dp.executeSQL("addNewSP", new List<DbParameter> {
-                                new DbParameter("MaSP",txtMaH.Text),
-                                new DbParameter("Maloai",cmbNhomsp.SelectedValue.ToString()),
+            if (!validate_input()) { return; }          
+                if (chinhsua) {
+                    if (File.Exists(anhsp.ImageLocation) && !Path.Combine(anhsp.ImageLocation,"").Equals(Path.Combine(System.Windows.Forms.Application.StartupPath + @"/Images/" + txtMaH.Text + ".jpg","")))
+                    {
+                        File.Copy(anhsp.ImageLocation, System.Windows.Forms.Application.StartupPath + @"/Images/" + txtMaH.Text + ".jpg", true);
+                    }                    
+                    if (dp.executeSQL("updateSP", new List<DbParameter> {
+                                new DbParameter("MaH",txtMaH.Text),
+                                new DbParameter("MaLoai",cmbNhomsp.SelectedValue.ToString()),
                                 new DbParameter("TenH",txtTenH.Text),
                                 new DbParameter("DonVT",txtDvt.Text),
-                                new DbParameter("GiaNhap",txtGianhap.Text),
-                                new DbParameter("tylelai",txtTylelai.Text),
-                                new DbParameter("thoigianBH",txtThoigianbh.Text),
-                                new DbParameter("mota",txtmota.Text),
+                                new DbParameter("GiaNhap",Convert.ToDouble(txtGianhap.Text).ToString()),
+                                new DbParameter("TyLeLai",txtTylelai.Text),
+                                new DbParameter("ThoiGianBH",txtThoigianbh.Text),
+                                new DbParameter("Mota",txtmota.Text),
                                 new DbParameter("anh_url","Images/"+txtMaH.Text+".jpg")
                               }) == 1)
-                {
-                    MessageBox.Show("Thêm thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    loadGrid(tvLoaiSP.SelectedNode.Tag.ToString());
-                    change_Status_btn(true, true, false, true, false);
-                    set_control(false);
-                    dtgv.Enabled = true;
+                    {
+                        MessageBox.Show("Sửa thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        loadGrid(tvLoaiSP.SelectedNode.Tag.ToString());
+                        change_Status_btn(true, true, false, true, false);
+                        set_control(false);
+                        dtgv.Enabled = true;
+                    }
                 }
-            }
-            else
-            {
-                err.SetError(txtMaH, "Mã SP này đã có.");
-                return;
-            }
+                else
+                {
+                  if (dp.getAllData("getSPbyID", new List<DbParameter> { new DbParameter("MaSP",txtMaH.Text)}).Rows.Count == 0)           
+                  {
+                        if (File.Exists(anhsp.ImageLocation))
+                        {
+                            File.Copy(anhsp.ImageLocation, System.Windows.Forms.Application.StartupPath + @"/Images/" + txtMaH.Text + ".jpg", true);
+                        }
+                        if (dp.executeSQL("addNewSP", new List<DbParameter> {
+                                    new DbParameter("MaSP",txtMaH.Text),
+                                    new DbParameter("Maloai",cmbNhomsp.SelectedValue.ToString()),
+                                    new DbParameter("TenH",txtTenH.Text),
+                                    new DbParameter("DonVT",txtDvt.Text),
+                                    new DbParameter("GiaNhap",Convert.ToDouble(txtGianhap.Text).ToString()),
+                                    new DbParameter("tylelai",txtTylelai.Text),
+                                    new DbParameter("thoigianBH",txtThoigianbh.Text),
+                                    new DbParameter("mota",txtmota.Text),
+                                    new DbParameter("anh_url","Images/"+txtMaH.Text+".jpg")
+                                  }) == 1)
+                        {
+                            MessageBox.Show("Thêm thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            loadGrid(tvLoaiSP.SelectedNode.Tag.ToString());
+                            change_Status_btn(true, true, false, true, false);
+                            set_control(false);
+                            dtgv.Enabled = true;
+                        }
+                    }
+                      else
+                      {
+                          err.SetError(txtMaH, "Mã SP này đã có.");
+                          return;
+                      }
+                }
+           
 
         }
 
@@ -279,7 +297,47 @@ namespace QLBH.QuanLy
             dtgv.Enabled = false;
             chinhsua = true;
             set_control(true);
-            change_Status_btn(false, false, true, false, true);            
+            txtMaH.Enabled = false;
+            change_Status_btn(false, false, true, false, true);
+            chinhsua = true;
+        }
+
+        private void txtTylelai_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtThoigianbh_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Bạn có muốn xóa sản phẩm này không?", "Xóa Sản phẩm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if (dp.executeSQL("deleteSP", new List<DbParameter> {
+                                new DbParameter("MaH",dtgv.CurrentRow.Cells[MaH.Name].Value.ToString())}) == 1)
+                {
+                    MessageBox.Show("Xóa thành công!");
+                    loadGrid(tvLoaiSP.SelectedNode.Tag.ToString());
+                }
+            }
+        }
+
+        private void frmQuanlySanpham_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F3) btnThem_Click(null, null);
+            if (e.KeyCode == Keys.F2) btnSua_Click(null, null);
+            if (e.KeyCode == Keys.F5) btnCapnhat_Click(null, null);
+            if (e.KeyCode == Keys.F6) btnXoa_Click(null, null);
+            if (e.KeyCode == Keys.Escape) btnHuybo_Click(null, null);
         }
 
        
