@@ -33,24 +33,11 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.dgvChuongtrinh = new System.Windows.Forms.DataGridView();
-            this.stt = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenCT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ngaybatdau = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ngayketthuc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.trangthai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.noidung = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nav = new System.Windows.Forms.BindingNavigator(this.components);
-            this.btnThem = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnSua = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnCapnhat = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnXoa = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnHuybo = new System.Windows.Forms.ToolStripButton();
-            this.txtNgayketthuc = new System.Windows.Forms.MaskedTextBox();
-            this.txtNgaybatdau = new System.Windows.Forms.MaskedTextBox();
             this.txtNoidun = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -58,14 +45,28 @@
             this.txtTenCT = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvSanpham = new System.Windows.Forms.DataGridView();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.txtNgaybatdau = new System.Windows.Forms.DateTimePicker();
+            this.txtNgayketthuc = new System.Windows.Forms.DateTimePicker();
+            this.stt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenCT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ngaybatdau = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ngayketthuc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.trangthai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.noidung = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaCT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sttSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Giamgia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.btnThem = new System.Windows.Forms.ToolStripButton();
+            this.btnSua = new System.Windows.Forms.ToolStripButton();
+            this.btnCapnhat = new System.Windows.Forms.ToolStripButton();
+            this.btnXoa = new System.Windows.Forms.ToolStripButton();
+            this.btnHuybo = new System.Windows.Forms.ToolStripButton();
             this.btnThemLoai = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.btnSuaLoai = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.btnXoaLoai = new System.Windows.Forms.ToolStripButton();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -137,7 +138,8 @@
             this.ngaybatdau,
             this.ngayketthuc,
             this.trangthai,
-            this.noidung});
+            this.noidung,
+            this.MaCT});
             this.dgvChuongtrinh.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvChuongtrinh.EnableHeadersVisualStyles = false;
             this.dgvChuongtrinh.Location = new System.Drawing.Point(0, 0);
@@ -149,58 +151,6 @@
             this.dgvChuongtrinh.TabIndex = 0;
             this.dgvChuongtrinh.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvChuongtrinh_CellFormatting);
             this.dgvChuongtrinh.SelectionChanged += new System.EventHandler(this.dgvChuongtrinh_SelectionChanged);
-            // 
-            // stt
-            // 
-            this.stt.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.stt.DataPropertyName = "tt";
-            this.stt.HeaderText = "TT";
-            this.stt.Name = "stt";
-            this.stt.ReadOnly = true;
-            this.stt.Width = 46;
-            // 
-            // TenCT
-            // 
-            this.TenCT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.TenCT.DataPropertyName = "TenCT";
-            this.TenCT.HeaderText = "Tên chương trình";
-            this.TenCT.Name = "TenCT";
-            this.TenCT.ReadOnly = true;
-            // 
-            // ngaybatdau
-            // 
-            this.ngaybatdau.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.ngaybatdau.DataPropertyName = "NgayBatDau";
-            this.ngaybatdau.HeaderText = "Ngày bắt đầu";
-            this.ngaybatdau.Name = "ngaybatdau";
-            this.ngaybatdau.ReadOnly = true;
-            this.ngaybatdau.Width = 72;
-            // 
-            // ngayketthuc
-            // 
-            this.ngayketthuc.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.ngayketthuc.DataPropertyName = "NgayKetThuc";
-            this.ngayketthuc.HeaderText = "Ngày kết thúc";
-            this.ngayketthuc.Name = "ngayketthuc";
-            this.ngayketthuc.ReadOnly = true;
-            this.ngayketthuc.Width = 72;
-            // 
-            // trangthai
-            // 
-            this.trangthai.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.trangthai.DataPropertyName = "trangthai";
-            this.trangthai.HeaderText = "Trạng thái";
-            this.trangthai.Name = "trangthai";
-            this.trangthai.ReadOnly = true;
-            this.trangthai.Width = 74;
-            // 
-            // noidung
-            // 
-            this.noidung.DataPropertyName = "NoiDungCT";
-            this.noidung.HeaderText = "Nội dung";
-            this.noidung.Name = "noidung";
-            this.noidung.ReadOnly = true;
-            this.noidung.Visible = false;
             // 
             // Nav
             // 
@@ -231,87 +181,25 @@
             this.Nav.TabIndex = 6;
             this.Nav.Text = "bindingNavigator1";
             // 
-            // btnThem
-            // 
-            this.btnThem.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.Image")));
-            this.btnThem.Name = "btnThem";
-            this.btnThem.RightToLeftAutoMirrorImage = true;
-            this.btnThem.Size = new System.Drawing.Size(95, 22);
-            this.btnThem.Text = "Thêm mới [F3]";
-            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
-            // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
-            // 
-            // btnSua
-            // 
-            this.btnSua.Image = global::QLBH.Properties.Resources.hammer_screwdriver;
-            this.btnSua.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(98, 22);
-            this.btnSua.Text = "Chỉnh sửa [F2]";
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
             this.toolStripSeparator4.Size = new System.Drawing.Size(6, 25);
             // 
-            // btnCapnhat
-            // 
-            this.btnCapnhat.Image = global::QLBH.Properties.Resources.disk;
-            this.btnCapnhat.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnCapnhat.Name = "btnCapnhat";
-            this.btnCapnhat.Size = new System.Drawing.Size(94, 22);
-            this.btnCapnhat.Text = "Cập nhật [F5]";
-            this.btnCapnhat.Click += new System.EventHandler(this.btnCapnhat_Click);
-            // 
             // toolStripSeparator5
             // 
             this.toolStripSeparator5.Name = "toolStripSeparator5";
             this.toolStripSeparator5.Size = new System.Drawing.Size(6, 25);
             // 
-            // btnXoa
-            // 
-            this.btnXoa.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Image")));
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.RightToLeftAutoMirrorImage = true;
-            this.btnXoa.Size = new System.Drawing.Size(68, 22);
-            this.btnXoa.Text = "Xóa [F6]";
-            // 
             // toolStripSeparator6
             // 
             this.toolStripSeparator6.Name = "toolStripSeparator6";
             this.toolStripSeparator6.Size = new System.Drawing.Size(6, 25);
-            // 
-            // btnHuybo
-            // 
-            this.btnHuybo.Image = global::QLBH.Properties.Resources.huybo;
-            this.btnHuybo.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnHuybo.Name = "btnHuybo";
-            this.btnHuybo.Size = new System.Drawing.Size(91, 20);
-            this.btnHuybo.Text = "Hủy bỏ [ESC]";
-            // 
-            // txtNgayketthuc
-            // 
-            this.txtNgayketthuc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNgayketthuc.Location = new System.Drawing.Point(114, 151);
-            this.txtNgayketthuc.Mask = "00/00/0000 90:00";
-            this.txtNgayketthuc.Name = "txtNgayketthuc";
-            this.txtNgayketthuc.Size = new System.Drawing.Size(155, 21);
-            this.txtNgayketthuc.TabIndex = 2;
-            this.txtNgayketthuc.ValidatingType = typeof(System.DateTime);
-            // 
-            // txtNgaybatdau
-            // 
-            this.txtNgaybatdau.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNgaybatdau.Location = new System.Drawing.Point(114, 125);
-            this.txtNgaybatdau.Mask = "00/00/0000 90:00";
-            this.txtNgaybatdau.Name = "txtNgaybatdau";
-            this.txtNgaybatdau.Size = new System.Drawing.Size(155, 21);
-            this.txtNgaybatdau.TabIndex = 2;
-            this.txtNgaybatdau.ValidatingType = typeof(System.DateTime);
             // 
             // txtNoidun
             // 
@@ -389,33 +277,9 @@
             this.dgvSanpham.Location = new System.Drawing.Point(0, 0);
             this.dgvSanpham.MultiSelect = false;
             this.dgvSanpham.Name = "dgvSanpham";
-            this.dgvSanpham.ReadOnly = true;
             this.dgvSanpham.RowHeadersVisible = false;
             this.dgvSanpham.Size = new System.Drawing.Size(274, 413);
             this.dgvSanpham.TabIndex = 0;
-            // 
-            // sttSP
-            // 
-            this.sttSP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.sttSP.HeaderText = "TT";
-            this.sttSP.Name = "sttSP";
-            this.sttSP.ReadOnly = true;
-            this.sttSP.Width = 46;
-            // 
-            // TenSP
-            // 
-            this.TenSP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.TenSP.HeaderText = "Tên Sản phẩm";
-            this.TenSP.Name = "TenSP";
-            this.TenSP.ReadOnly = true;
-            // 
-            // Giamgia
-            // 
-            this.Giamgia.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Giamgia.HeaderText = "Giảm giá(%)";
-            this.Giamgia.Name = "Giamgia";
-            this.Giamgia.ReadOnly = true;
-            this.Giamgia.Width = 87;
             // 
             // toolStrip1
             // 
@@ -432,6 +296,167 @@
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
             // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // txtNgaybatdau
+            // 
+            this.txtNgaybatdau.CustomFormat = "dd/MM/yyyy hh:mm:ss";
+            this.txtNgaybatdau.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNgaybatdau.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.txtNgaybatdau.Location = new System.Drawing.Point(114, 125);
+            this.txtNgaybatdau.Name = "txtNgaybatdau";
+            this.txtNgaybatdau.Size = new System.Drawing.Size(155, 21);
+            this.txtNgaybatdau.TabIndex = 3;
+            // 
+            // txtNgayketthuc
+            // 
+            this.txtNgayketthuc.CustomFormat = "dd/MM/yyyy hh:mm:ss";
+            this.txtNgayketthuc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNgayketthuc.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.txtNgayketthuc.Location = new System.Drawing.Point(114, 151);
+            this.txtNgayketthuc.Name = "txtNgayketthuc";
+            this.txtNgayketthuc.Size = new System.Drawing.Size(155, 21);
+            this.txtNgayketthuc.TabIndex = 3;
+            // 
+            // stt
+            // 
+            this.stt.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.stt.DataPropertyName = "tt";
+            this.stt.HeaderText = "TT";
+            this.stt.Name = "stt";
+            this.stt.ReadOnly = true;
+            this.stt.Width = 46;
+            // 
+            // TenCT
+            // 
+            this.TenCT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.TenCT.DataPropertyName = "TenCT";
+            this.TenCT.HeaderText = "Tên chương trình";
+            this.TenCT.Name = "TenCT";
+            this.TenCT.ReadOnly = true;
+            // 
+            // ngaybatdau
+            // 
+            this.ngaybatdau.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.ngaybatdau.DataPropertyName = "NgayBatDau";
+            this.ngaybatdau.HeaderText = "Ngày bắt đầu";
+            this.ngaybatdau.Name = "ngaybatdau";
+            this.ngaybatdau.ReadOnly = true;
+            this.ngaybatdau.Width = 97;
+            // 
+            // ngayketthuc
+            // 
+            this.ngayketthuc.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.ngayketthuc.DataPropertyName = "NgayKetThuc";
+            this.ngayketthuc.HeaderText = "Ngày kết thúc";
+            this.ngayketthuc.Name = "ngayketthuc";
+            this.ngayketthuc.ReadOnly = true;
+            this.ngayketthuc.Width = 99;
+            // 
+            // trangthai
+            // 
+            this.trangthai.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.trangthai.DataPropertyName = "trangthai";
+            this.trangthai.HeaderText = "Trạng thái";
+            this.trangthai.Name = "trangthai";
+            this.trangthai.ReadOnly = true;
+            this.trangthai.Width = 80;
+            // 
+            // noidung
+            // 
+            this.noidung.DataPropertyName = "NoiDungCT";
+            this.noidung.HeaderText = "Nội dung";
+            this.noidung.Name = "noidung";
+            this.noidung.ReadOnly = true;
+            this.noidung.Visible = false;
+            // 
+            // MaCT
+            // 
+            this.MaCT.DataPropertyName = "PK_MaKM";
+            this.MaCT.HeaderText = "MaCT";
+            this.MaCT.Name = "MaCT";
+            this.MaCT.ReadOnly = true;
+            this.MaCT.Visible = false;
+            // 
+            // sttSP
+            // 
+            this.sttSP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.sttSP.DataPropertyName = "tt";
+            this.sttSP.HeaderText = "TT";
+            this.sttSP.Name = "sttSP";
+            this.sttSP.ReadOnly = true;
+            this.sttSP.Width = 46;
+            // 
+            // TenSP
+            // 
+            this.TenSP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.TenSP.DataPropertyName = "TenH";
+            this.TenSP.HeaderText = "Tên Sản phẩm";
+            this.TenSP.Name = "TenSP";
+            this.TenSP.ReadOnly = true;
+            // 
+            // Giamgia
+            // 
+            this.Giamgia.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Giamgia.DataPropertyName = "Giamgia";
+            this.Giamgia.HeaderText = "Giảm giá(%)";
+            this.Giamgia.Name = "Giamgia";
+            this.Giamgia.ReadOnly = true;
+            this.Giamgia.Width = 87;
+            // 
+            // btnThem
+            // 
+            this.btnThem.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.Image")));
+            this.btnThem.Name = "btnThem";
+            this.btnThem.RightToLeftAutoMirrorImage = true;
+            this.btnThem.Size = new System.Drawing.Size(95, 22);
+            this.btnThem.Text = "Thêm mới [F3]";
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
+            // 
+            // btnSua
+            // 
+            this.btnSua.Image = global::QLBH.Properties.Resources.hammer_screwdriver;
+            this.btnSua.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(98, 22);
+            this.btnSua.Text = "Chỉnh sửa [F2]";
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
+            // 
+            // btnCapnhat
+            // 
+            this.btnCapnhat.Image = global::QLBH.Properties.Resources.disk;
+            this.btnCapnhat.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnCapnhat.Name = "btnCapnhat";
+            this.btnCapnhat.Size = new System.Drawing.Size(94, 22);
+            this.btnCapnhat.Text = "Cập nhật [F5]";
+            this.btnCapnhat.Click += new System.EventHandler(this.btnCapnhat_Click);
+            // 
+            // btnXoa
+            // 
+            this.btnXoa.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Image")));
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.RightToLeftAutoMirrorImage = true;
+            this.btnXoa.Size = new System.Drawing.Size(68, 22);
+            this.btnXoa.Text = "Xóa [F6]";
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
+            // 
+            // btnHuybo
+            // 
+            this.btnHuybo.Image = global::QLBH.Properties.Resources.huybo;
+            this.btnHuybo.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnHuybo.Name = "btnHuybo";
+            this.btnHuybo.Size = new System.Drawing.Size(91, 20);
+            this.btnHuybo.Text = "Hủy bỏ [ESC]";
+            this.btnHuybo.Click += new System.EventHandler(this.btnHuybo_Click);
+            // 
             // btnThemLoai
             // 
             this.btnThemLoai.Image = global::QLBH.Properties.Resources.them;
@@ -439,11 +464,7 @@
             this.btnThemLoai.Name = "btnThemLoai";
             this.btnThemLoai.Size = new System.Drawing.Size(53, 22);
             this.btnThemLoai.Text = "Thêm";
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            this.btnThemLoai.Click += new System.EventHandler(this.btnThemLoai_Click);
             // 
             // btnSuaLoai
             // 
@@ -452,11 +473,7 @@
             this.btnSuaLoai.Name = "btnSuaLoai";
             this.btnSuaLoai.Size = new System.Drawing.Size(46, 22);
             this.btnSuaLoai.Text = "Sửa";
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            this.btnSuaLoai.Click += new System.EventHandler(this.btnSuaLoai_Click);
             // 
             // btnXoaLoai
             // 
@@ -510,9 +527,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtTenCT;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sttSP;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenSP;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Giamgia;
         private System.Windows.Forms.BindingNavigator Nav;
         private System.Windows.Forms.ToolStripButton btnThem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
@@ -529,13 +543,17 @@
         private System.Windows.Forms.ToolStripButton btnSuaLoai;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripButton btnXoaLoai;
+        private System.Windows.Forms.DateTimePicker txtNgaybatdau;
+        private System.Windows.Forms.DateTimePicker txtNgayketthuc;
         private System.Windows.Forms.DataGridViewTextBoxColumn stt;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenCT;
         private System.Windows.Forms.DataGridViewTextBoxColumn ngaybatdau;
         private System.Windows.Forms.DataGridViewTextBoxColumn ngayketthuc;
         private System.Windows.Forms.DataGridViewTextBoxColumn trangthai;
         private System.Windows.Forms.DataGridViewTextBoxColumn noidung;
-        private System.Windows.Forms.MaskedTextBox txtNgayketthuc;
-        private System.Windows.Forms.MaskedTextBox txtNgaybatdau;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaCT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sttSP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenSP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Giamgia;
     }
 }
