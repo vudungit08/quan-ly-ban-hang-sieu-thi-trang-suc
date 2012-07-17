@@ -39,7 +39,7 @@ namespace QLBH
     
     class DataProcess:DataConnection{
         public DataProcess()
-            : base(@"Data Source=MRT\VNQTEXPRESS;Initial Catalog=QLBH_DATA;Integrated Security=True")
+            : base(@"Data Source=SVNTEAM062211\SQLEXPRESS;Initial Catalog=QLBH_DATA;Integrated Security=True")
         { 
         }
         /// <summary>

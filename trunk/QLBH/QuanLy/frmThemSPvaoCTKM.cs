@@ -23,6 +23,7 @@ namespace QLBH.QuanLy
         {
             this.dgvGroup.AutoGenerateColumns = false;
             this.dgvSanPham.AutoGenerateColumns = false;
+            lbltect.Text = "Chương trình:" + dp.getOneData("SELECT TenCT FROM tblChuongTrinhKhuyenMai WHERE PK_MaKM="+this.MactKM);
             loadGridGroup();
         }
         private void loadGridGroup() {
@@ -97,6 +98,14 @@ namespace QLBH.QuanLy
                 dgvSanPham.UpdateCellValue(e.ColumnIndex, e.RowIndex);
             }
         }
+
+        private void toolStripButton3_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+      
+      
 
        
 
