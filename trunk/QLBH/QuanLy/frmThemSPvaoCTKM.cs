@@ -32,13 +32,22 @@ namespace QLBH.QuanLy
         }
         private void loadGrid(string Maloai)
         {           
-            DataTable dt=dp.getAllData("getSPbyIDLoai", new List<DbParameter> { new DbParameter("Maloai", Maloai) });          
+            DataTable dt=dp.getAllData("getSPbyIDLoai", new List<DbParameter> { new DbParameter("Maloai", Maloai) });
+            dt.Columns.Add("check_sp", typeof(Boolean));          
             dt.Columns.Add("Giamgia", typeof(Int32));          
             dgvSanPham.DataSource = dt;
+            DataTable dtkm = dp.getAllData("getSPCTKhuyenmai", new List<DbParameter> { new DbParameter("MaCT", this.MactKM) });
             foreach (DataGridViewRow dr in dgvSanPham.Rows)
             {
                 dr.Cells[check_sp.Name].Value = false;
-                dr.Cells[giamgia.Name].Value = 0;
+                dr.Cells[giamgia.Name].Value = 0;                    
+                foreach (DataRow r in dtkm.Rows)
+                {
+                    if(r["FK_MaH"].Equals(dr.Cells[MaH.Name].Value)){
+                        dr.Cells[check_sp.Name].Value = true;
+                        dr.Cells[giamgia.Name].Value = r["Giamgia"].ToString();
+                    }                        
+                }
             }
         }
 
@@ -63,7 +72,7 @@ namespace QLBH.QuanLy
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
             dgvSanPham.EndEdit();
-            if (MessageBox.Show("Bạn có muốn thêm các SP này vào chương trình khuyến mãi không?", "Thêm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes) {
+            if (MessageBox.Show("Bạn có muốn cập nhật các SP này vào chương trình khuyến mãi không?", "Thêm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes) {
                 foreach(DataGridViewRow dr in dgvSanPham.Rows){                    
                     if (dr.Cells[check_sp.Name].Value.ToString().ToLower().Equals("true"))
                     {
@@ -75,8 +84,7 @@ namespace QLBH.QuanLy
                     }
                 }
                 MessageBox.Show("Thêm thành công!");
-                LG(this.MactKM);
-                this.Close();
+                LG(this.MactKM);                
                 
             }
         }
@@ -102,6 +110,14 @@ namespace QLBH.QuanLy
         private void toolStripButton3_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void frmThemSPvaoCTKM_KeyDown(object sender, KeyEventArgs e)
+        {
+
+            if (e.KeyCode == Keys.F2) toolStripButton1_Click(null, null);
+            if (e.KeyCode == Keys.F3) toolStripButton2_Click(null, null);
+            if (e.KeyCode == Keys.Escape) toolStripButton3_Click(null, null);
         }
 
       

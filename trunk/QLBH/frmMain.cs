@@ -79,6 +79,13 @@ namespace QLBH
             frm.Show();
         }
 
+        private void mnuQuanlybanhang_Click(object sender, EventArgs e)
+        {
+            QuanLy.frmQuanlybanhang frm = new QLBH.QuanLy.frmQuanlybanhang();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
      
 
 

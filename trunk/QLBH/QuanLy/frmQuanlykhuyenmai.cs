@@ -177,9 +177,27 @@ namespace QLBH.QuanLy
             frm.ShowDialog();
         }
 
-        private void btnSuaLoai_Click(object sender, EventArgs e)
+
+
+        private void btnXoaLoai_Click(object sender, EventArgs e)
         {
-          
+            if (MessageBox.Show("Bạn có muốn xoa sản phẩm này khỏi chương trinh khuyến mãi không?","Xóa",MessageBoxButtons.YesNo,MessageBoxIcon.Question)==DialogResult.Yes) {
+                if (dp.executeSQL("deleteSPKhuyenmai", new List<DbParameter>{new DbParameter("MaCT",dgvChuongtrinh.CurrentRow.Cells[MaCT.Name].Value),
+                                                                        new DbParameter("MaH",dgvSanpham.CurrentRow.Cells[MaSP.Name].Value)}) == 1) {
+                                                                            MessageBox.Show("Xóa thành công");
+                                                                            loadGridSPKM(dgvChuongtrinh.CurrentRow.Cells[MaCT.Name].Value.ToString());
+                }
+            }
+
+        }
+
+        private void frmQuanlykhuyenmai_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F2) btnSua_Click(null, null);
+            if (e.KeyCode == Keys.F3) btnThem_Click(null, null);
+            if (e.KeyCode == Keys.F5) btnCapnhat_Click(null, null);
+            if (e.KeyCode == Keys.F6) btnXoa_Click(null, null);
+            if (e.KeyCode == Keys.Escape) btnHuybo_Click(null, null);
         }
 
        
