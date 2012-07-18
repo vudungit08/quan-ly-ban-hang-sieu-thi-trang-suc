@@ -207,7 +207,7 @@
             this.toolStripButton1.Image = global::QLBH.Properties.Resources.dongy;
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(99, 22);
+            this.toolStripButton1.Size = new System.Drawing.Size(94, 22);
             this.toolStripButton1.Text = "Chọn hết [F2]";
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
@@ -221,7 +221,7 @@
             this.toolStripButton2.Image = global::QLBH.Properties.Resources.disk;
             this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(98, 22);
+            this.toolStripButton2.Size = new System.Drawing.Size(94, 22);
             this.toolStripButton2.Text = "Cập nhật [F3]";
             this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
@@ -235,8 +235,8 @@
             this.toolStripButton3.Image = global::QLBH.Properties.Resources.huybo;
             this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(97, 22);
-            this.toolStripButton3.Text = "Hủy bỏ [ESC]";
+            this.toolStripButton3.Size = new System.Drawing.Size(88, 22);
+            this.toolStripButton3.Text = "Trờ về [ESC]";
             this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
             // 
             // frmThemSPvaoCTKM
@@ -245,6 +245,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(487, 325);
             this.Controls.Add(this.splitContainer1);
+            this.KeyPreview = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmThemSPvaoCTKM";
@@ -252,6 +253,7 @@
             this.ShowInTaskbar = false;
             this.Text = "Thêm Sản phẩm vào chương trình khuyến mãi";
             this.Load += new System.EventHandler(this.frmThemSPvaoCTKM_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmThemSPvaoCTKM_KeyDown);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             this.splitContainer1.ResumeLayout(false);

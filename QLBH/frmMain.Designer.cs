@@ -288,6 +288,7 @@
             this.mnuQuanlybanhang.Name = "mnuQuanlybanhang";
             this.mnuQuanlybanhang.Size = new System.Drawing.Size(282, 22);
             this.mnuQuanlybanhang.Text = "Quản lý bán hàng";
+            this.mnuQuanlybanhang.Click += new System.EventHandler(this.mnuQuanlybanhang_Click);
             // 
             // nmuThongke
             // 
