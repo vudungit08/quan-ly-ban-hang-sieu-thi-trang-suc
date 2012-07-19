@@ -130,6 +130,27 @@ namespace QLBH.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap _1342661269_cash_register {
+            get {
+                object obj = ResourceManager.GetObject("1342661269_cash_register", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap _1342661299_cash_register {
+            get {
+                object obj = ResourceManager.GetObject("1342661299_cash_register", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap _1342661353_print {
+            get {
+                object obj = ResourceManager.GetObject("1342661353_print", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap database {
             get {
                 object obj = ResourceManager.GetObject("database", resourceCulture);
