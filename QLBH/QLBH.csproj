@@ -230,6 +230,9 @@
       <DependentUpon>QLBH_DATA.mdf</DependentUpon>
     </Content>
     <Content Include="icon.ico" />
+    <None Include="Resources\1342661353_print.png" />
+    <None Include="Resources\1342661299_cash_register.png" />
+    <None Include="Resources\1342661269_cash_register.png" />
     <None Include="Resources\1341800048_change_password.png" />
     <None Include="Resources\1341797848_preferences-desktop-theme.png" />
     <None Include="Resources\1341797801_data_management.png" />
