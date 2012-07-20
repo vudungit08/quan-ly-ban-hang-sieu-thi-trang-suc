@@ -25,12 +25,25 @@ namespace QLBH
             lblngay.Text = "Ngày : "+DateTime.Now.ToShortDateString();
             
         }
+        private void Init_menu(bool bl) {
+            mnuBaocao.Enabled = bl;
+            nmuThongke.Enabled = bl;
+            mnuQuanglychuongtrinhkhuyenmai.Enabled = bl;
+            mnuQuanlynhanvien.Enabled = bl;
+            mnuQuanglychuongtrinhkhuyenmai.Enabled = bl;
+            mnuQuanlysanpham.Enabled = bl;
+        }
         private void Init_User(string MaNV) {                        
             DataTable dt = dp.getAllData("dbo.getNVbyID", new List<DbParameter>() { new DbParameter("MaNV", MaNV) });
             if (dt.Rows.Count == 1) {
                 frmMain.MaNV = MaNV;
                 this.Matkhau = dt.Rows[0]["Matkhau"].ToString();
                 lblnhanvien.Text ="Nhân viên : "+dt.Rows[0]["TenNV"].ToString()+" - Chức vụ :"+(dt.Rows[0]["Chucvu"].ToString().ToLower()=="admin"?"Quản lý":"Nhân viên bán hàng");
+                if (dt.Rows[0]["Chucvu"].ToString().ToLower() != "admin")
+                {
+                    Init_menu(false);
+                }
+                else Init_menu(true);
             }
         }
         private void frmMain_Shown(object sender, EventArgs e)
@@ -90,6 +103,13 @@ namespace QLBH
         private void mnuBaocao_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void danhSáchHóaĐơnBánHàngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            QuanLy.frmDanhSachHoaDon frm = new QLBH.QuanLy.frmDanhSachHoaDon();
+            frm.MdiParent = this;
+            frm.Show();
         }
 
      

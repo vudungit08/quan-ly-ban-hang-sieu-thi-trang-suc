@@ -42,3 +42,5 @@ C:\Users\Administrator\Desktop\BTL\QLBH\obj\Debug\QLBH.QuanLy.frmThemnhomSP.reso
 C:\Documents and Settings\Easy XP\Desktop\BTL\QLBH\obj\Debug\QLBH.QuanLy.frmQuanlykhuyenmai.resources
 C:\Documents and Settings\Easy XP\Desktop\BTL\QLBH\obj\Debug\QLBH.QuanLy.frmThemSPvaoCTKM.resources
 C:\Documents and Settings\Easy XP\Desktop\BTL\QLBH\obj\Debug\QLBH.QuanLy.frmQuanlybanhang.resources
+C:\Documents and Settings\Easy XP\Desktop\BTL\QLBH\obj\Debug\QLBH.QuanLy.ChonSP.resources
+C:\Documents and Settings\Easy XP\Desktop\BTL\QLBH\obj\Debug\QLBH.QuanLy.frmDanhSachHoaDon.resources
