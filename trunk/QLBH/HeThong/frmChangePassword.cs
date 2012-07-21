@@ -30,7 +30,7 @@ namespace QLBH.HeThong
                 return;
             }
             
-            if(!txtMatkhaucu.Text.Trim().Equals(this.Matkhau)) {
+            if(!txtMatkhaucu.Text.Trim().Equals(dp.getOneData("SELECT Matkhau From tblNhanVien WHERE PK_MaNV=N'"+frmMain.MaNV+"'").ToString())) {
                 err.SetError(txtMatkhaucu, "Sai mật khẩu cũ.");
                 return;
             }
@@ -40,7 +40,7 @@ namespace QLBH.HeThong
             }
             if (dp.executeSQL("changePassWordNV", new List<DbParameter>{new DbParameter("MaNV",this.MaNV),
                                                                     new DbParameter("Matkhaumoi",txtMatkhaumoi.Text)
-                                                                    }) == 1) {
+                                                                    }) > 1) {
                                                                         MessageBox.Show("Mật khẩu thay đổi thành công","Thành công",MessageBoxButtons.OK,MessageBoxIcon.Information);
                                                                         this.Close();
             }

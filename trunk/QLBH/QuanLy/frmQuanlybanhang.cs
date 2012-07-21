@@ -239,7 +239,7 @@ namespace QLBH.QuanLy
             {
                 if (MessageBox.Show("Bạn muốn thanh toán hóa đơn này ?", "Thanh toán", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    if (dp.executeSQL("INSERT INTO tblHoadon(FK_MaNV,Ngaylap) VALUES(N'" + frmMain.MaNV + "','" + String.Format("{0:MM/dd/yyyy HH:mm:ss tt}", txtNgayban.Value) + "')") == 1)
+                    if (dp.executeSQL("INSERT INTO tblHoadon(FK_MaNV,Ngaylap) VALUES(N'" + frmMain.MaNV + "','" + String.Format("{0:MM/dd/yyyy HH:mm:ss}", txtNgayban.Value) + "')") == 1)
                     {
                         foreach (DataRow dr in dtCart.Rows)
                         {
