@@ -64,8 +64,6 @@
             this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
             this.thốngKêBánHàngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
-            this.thốngKêNhânViênToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator13 = new System.Windows.Forms.ToolStripSeparator();
             this.tìmKiếmToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuBaocao = new System.Windows.Forms.ToolStripDropDownButton();
             this.báoCáoKinhDoanhToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -92,20 +90,20 @@
             // lblnhanvien
             // 
             this.lblnhanvien.Name = "lblnhanvien";
-            this.lblnhanvien.Size = new System.Drawing.Size(62, 17);
+            this.lblnhanvien.Size = new System.Drawing.Size(67, 17);
             this.lblnhanvien.Text = "Nhân viên :";
             // 
             // toolStripStatusLabel2
             // 
             this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(768, 17);
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(761, 17);
             this.toolStripStatusLabel2.Spring = true;
             this.toolStripStatusLabel2.Text = "Phần mềm quản lý Bán hàng [Siêu thị trang sức]";
             // 
             // lblngay
             // 
             this.lblngay.Name = "lblngay";
-            this.lblngay.Size = new System.Drawing.Size(39, 17);
+            this.lblngay.Size = new System.Drawing.Size(41, 17);
             this.lblngay.Text = "Ngày :";
             // 
             // BottomToolStripPanel
@@ -315,8 +313,6 @@
             this.toolStripSeparator10,
             this.thốngKêBánHàngToolStripMenuItem,
             this.toolStripSeparator11,
-            this.thốngKêNhânViênToolStripMenuItem,
-            this.toolStripSeparator13,
             this.tìmKiếmToolStripMenuItem});
             this.nmuThongke.Image = global::QLBH.Properties.Resources.projection_screen_present;
             this.nmuThongke.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -330,6 +326,7 @@
             this.thốngKêSảnPhẩmToolStripMenuItem.Name = "thốngKêSảnPhẩmToolStripMenuItem";
             this.thốngKêSảnPhẩmToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
             this.thốngKêSảnPhẩmToolStripMenuItem.Text = "Thống kê Sản phẩm";
+            this.thốngKêSảnPhẩmToolStripMenuItem.Click += new System.EventHandler(this.thốngKêSảnPhẩmToolStripMenuItem_Click);
             // 
             // toolStripSeparator10
             // 
@@ -347,18 +344,6 @@
             // 
             this.toolStripSeparator11.Name = "toolStripSeparator11";
             this.toolStripSeparator11.Size = new System.Drawing.Size(197, 6);
-            // 
-            // thốngKêNhânViênToolStripMenuItem
-            // 
-            this.thốngKêNhânViênToolStripMenuItem.Image = global::QLBH.Properties.Resources._1341797714_BeOS_person;
-            this.thốngKêNhânViênToolStripMenuItem.Name = "thốngKêNhânViênToolStripMenuItem";
-            this.thốngKêNhânViênToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
-            this.thốngKêNhânViênToolStripMenuItem.Text = "Thống kê Nhân viên";
-            // 
-            // toolStripSeparator13
-            // 
-            this.toolStripSeparator13.Name = "toolStripSeparator13";
-            this.toolStripSeparator13.Size = new System.Drawing.Size(197, 6);
             // 
             // tìmKiếmToolStripMenuItem
             // 
@@ -466,7 +451,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator10;
         private System.Windows.Forms.ToolStripMenuItem thốngKêBánHàngToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator11;
-        private System.Windows.Forms.ToolStripMenuItem thốngKêNhânViênToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tìmKiếmToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripDropDownButton mnuBaocao;
@@ -482,7 +466,6 @@
         private System.Windows.Forms.ToolStripPanel RightToolStripPanel;
         private System.Windows.Forms.ToolStripPanel LeftToolStripPanel;
         private System.Windows.Forms.ToolStripContentPanel ContentPanel;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator13;
         private System.Windows.Forms.ToolStripMenuItem bánHàngToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem danhSáchHóaĐơnBánHàngToolStripMenuItem;
     }

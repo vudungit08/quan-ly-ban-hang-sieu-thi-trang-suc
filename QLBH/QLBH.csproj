@@ -135,6 +135,14 @@
       <DependentUpon>frmThemSPvaoCTKM.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="ThongKe\frmThongKeBH.resx">
+      <DependentUpon>frmThongKeBH.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThongKe\frmThongkeSP.resx">
+      <DependentUpon>frmThongkeSP.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
@@ -196,6 +204,18 @@
     </Compile>
     <Compile Include="QuanLy\frmThemSPvaoCTKM.Designer.cs">
       <DependentUpon>frmThemSPvaoCTKM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThongKe\frmThongKeBH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThongKe\frmThongKeBH.Designer.cs">
+      <DependentUpon>frmThongKeBH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThongKe\frmThongkeSP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThongKe\frmThongkeSP.Designer.cs">
+      <DependentUpon>frmThongkeSP.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -294,7 +314,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="BaoCao\" />
-    <Folder Include="ThongKe\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

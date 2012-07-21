@@ -13,6 +13,7 @@ namespace QLBH
     {
         string Matkhau = "";
         public static string MaNV { set; get; }
+        public static bool IsAdmin { set; get; }
         DataProcess dp = new DataProcess();
 
         public frmMain()
@@ -42,8 +43,9 @@ namespace QLBH
                 if (dt.Rows[0]["Chucvu"].ToString().ToLower() != "admin")
                 {
                     Init_menu(false);
+                    IsAdmin = false;
                 }
-                else Init_menu(true);
+                else { Init_menu(true); IsAdmin = true; }
             }
         }
         private void frmMain_Shown(object sender, EventArgs e)
@@ -108,6 +110,13 @@ namespace QLBH
         private void danhSáchHóaĐơnBánHàngToolStripMenuItem_Click(object sender, EventArgs e)
         {
             QuanLy.frmDanhSachHoaDon frm = new QLBH.QuanLy.frmDanhSachHoaDon();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void thốngKêSảnPhẩmToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ThongKe.frmThongkeSP frm = new QLBH.ThongKe.frmThongkeSP();
             frm.MdiParent = this;
             frm.Show();
         }

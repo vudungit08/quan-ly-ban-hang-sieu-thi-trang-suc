@@ -44,3 +44,10 @@ C:\Documents and Settings\Easy XP\Desktop\BTL\QLBH\obj\Debug\QLBH.QuanLy.frmThem
 C:\Documents and Settings\Easy XP\Desktop\BTL\QLBH\obj\Debug\QLBH.QuanLy.frmQuanlybanhang.resources
 C:\Documents and Settings\Easy XP\Desktop\BTL\QLBH\obj\Debug\QLBH.QuanLy.ChonSP.resources
 C:\Documents and Settings\Easy XP\Desktop\BTL\QLBH\obj\Debug\QLBH.QuanLy.frmDanhSachHoaDon.resources
+C:\Users\Administrator\Desktop\BTL\QLBH\obj\Debug\QLBH.QuanLy.ChonSP.resources
+C:\Users\Administrator\Desktop\BTL\QLBH\obj\Debug\QLBH.QuanLy.frmDanhSachHoaDon.resources
+C:\Users\Administrator\Desktop\BTL\QLBH\obj\Debug\QLBH.QuanLy.frmQuanlybanhang.resources
+C:\Users\Administrator\Desktop\BTL\QLBH\obj\Debug\QLBH.QuanLy.frmQuanlykhuyenmai.resources
+C:\Users\Administrator\Desktop\BTL\QLBH\obj\Debug\QLBH.QuanLy.frmThemSPvaoCTKM.resources
+C:\Users\Administrator\Desktop\BTL\QLBH\obj\Debug\QLBH.ThongKe.frmThongkeSP.resources
+C:\Users\Administrator\Desktop\BTL\QLBH\obj\Debug\QLBH.ThongKe.frmThongKeBH.resources
