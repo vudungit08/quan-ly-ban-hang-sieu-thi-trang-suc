@@ -143,6 +143,10 @@
       <DependentUpon>frmThongkeSP.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="ThongKe\frmTimKiem.resx">
+      <DependentUpon>frmTimKiem.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
@@ -216,6 +220,12 @@
     </Compile>
     <Compile Include="ThongKe\frmThongkeSP.Designer.cs">
       <DependentUpon>frmThongkeSP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThongKe\frmTimKiem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThongKe\frmTimKiem.Designer.cs">
+      <DependentUpon>frmTimKiem.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
