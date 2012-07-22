@@ -69,13 +69,19 @@ namespace QLBH.ThongKe
 
         private void cmbNam_SelectedIndexChanged(object sender, EventArgs e)
         {
-            load_Gt3(cmbthang.SelectedItem.ToString(),cmbNam.SelectedItem.ToString());
+            if (cmbNam.SelectedItem != null && cmbthang.SelectedItem != null)
+            {
+                load_Gt3(cmbthang.SelectedItem.ToString(), cmbNam.SelectedItem.ToString());
+            }
 
         }
 
         private void cmbthang_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+            if (cmbNam.SelectedItem != null && cmbthang.SelectedItem != null)
+            {
+                load_Gt3(cmbthang.SelectedItem.ToString(), cmbNam.SelectedItem.ToString());
+            }
         }
 
         private void dgv_t3_CellContentClick(object sender, DataGridViewCellEventArgs e)

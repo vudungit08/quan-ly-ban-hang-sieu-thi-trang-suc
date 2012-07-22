@@ -121,6 +121,13 @@ namespace QLBH
             frm.Show();
         }
 
+        private void tìmKiếmToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ThongKe.frmTimKiem frm = new QLBH.ThongKe.frmTimKiem();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
      
 
 

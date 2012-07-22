@@ -51,3 +51,4 @@ C:\Users\Administrator\Desktop\BTL\QLBH\obj\Debug\QLBH.QuanLy.frmQuanlykhuyenmai
 C:\Users\Administrator\Desktop\BTL\QLBH\obj\Debug\QLBH.QuanLy.frmThemSPvaoCTKM.resources
 C:\Users\Administrator\Desktop\BTL\QLBH\obj\Debug\QLBH.ThongKe.frmThongkeSP.resources
 C:\Users\Administrator\Desktop\BTL\QLBH\obj\Debug\QLBH.ThongKe.frmThongKeBH.resources
+C:\Users\Administrator\Desktop\BTL\QLBH\obj\Debug\QLBH.ThongKe.frmTimKiem.resources
